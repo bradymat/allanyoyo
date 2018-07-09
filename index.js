@@ -8,6 +8,7 @@ import Services from './components'
 import About from './components/about'
 import Contact from './components/contact'
 import Service from './components/service'
+import ConnectionsOption from './components/connections-option'
 import The404 from './components/404'
 
 const initView = document.createElement('div')
@@ -27,6 +28,7 @@ const initState = {
   services: [
     {
       name: 'Property Inspections',
+      route: '/service',
       title: 'Property Inspection',
       image: 'images/pi.jpg',
       blurb: "There are many reasons why you could need an electrical test or inspection on your property or electrical items. It could be for insurance purposes, landlord's inspection, change of use, ownership or even just for your own peace of mind.",
@@ -42,6 +44,7 @@ const initState = {
     },
     {
       name: 'ELECTRICAL WOF',
+      route: '/service',
       title: 'ELECTRICAL WARRANT OF FITNESS',
       image: 'images/ew.jpg',
       blurb: `<a class="image fit"><img src="images/ew.jpg" alt="" /></a>`,
@@ -57,6 +60,7 @@ const initState = {
     },
     {
       name: 'ELECTRICAL WOF',
+      route: '/service',
       title: 'ELECTRICAL WARRANT OF FITNESS',
       image: 'images/ew.jpg',
       blurb: "blah",
@@ -71,22 +75,21 @@ const initState = {
       ]
     },
     {
-      name: 'ELECTRICAL WOF',
-      title: 'ELECTRICAL WARRANT OF FITNESS',
-      image: 'images/ew.jpg',
-      blurb: "blah",
+      name: 'CONNECTIONS',
+      route: '/connections-option',
+      title: 'CONNECTIONS',
+      image: 'images/c.jpg',
+      blurb: "",
       contentLeft: [
-        {heading: 'Did You Know?', paragraphs: ["blah"]},
-        {heading: 'blah', paragraphs: ["blah"]},
-        {heading: 'blah', paragraphs: ["blah"]},
-        {heading: 'blah', paragraphs: ["blah"]}
+        {heading: 'Did you need a', paragraphs: ['<ul class="actions special"><li><a onclick=${() => changePageToService(state.exceptionServices[0])} class="button">Reconnection</a></li></ul>']}
       ],
       contentRight: [
-        {heading: 'blahblah', paragraphs: ["Contact us to make an appointment", "blah", "blah"]}
+        {heading: 'Or A', paragraphs: ['<ul class="actions special"><li><a href="reconnection.html" class="button">New Connection</a></li></ul>']}
       ]
     },
     {
       name: 'ELECTRICAL WOF',
+      route: '/service',
       title: 'ELECTRICAL WARRANT OF FITNESS',
       image: 'images/ew.jpg',
       blurb: "blah",
@@ -102,12 +105,47 @@ const initState = {
     },
     {
       name: 'ELECTRICAL UPGRADES',
+      route: '/service',
       title: 'ELECTRICAL UPGRADES',
       image: 'images/eu.jpg',
       blurb: "",
       contentLeft: [
         {heading: 'How do I arrange for a Renewal of mains inspection?', paragraphs: ['You or your electrician will need to complete a <a href="https://www.auroraenergy.co.nz/assets/Forms/AE-F008-Aurora-Application.pdf" target="_blank" >network application form</a> to notify the network that you wish to change your mains.', 'Contact your Energy Retailer, giving them the address or ICP number of the building to arrange a service request to reseal the meter.', 'Have your electrician contact IEIO for the high-risk mains inspection. We can arrange the revenue meter resealing to coincide with our inspection.']},
         {heading: 'HOW DO I UPGRADE MY MAIN EARTH?', paragraphs: ["Have your electrician contact IEIO to arrange an inspection, when he has completed his part of the work.", '<a class="image fit"><img src="images/eu.jpg" alt="" /></a>']},
+        {heading: 'blah', paragraphs: ["blah"]},
+        {heading: 'blah', paragraphs: ["blah"]}
+      ],
+      contentRight: [
+        {heading: 'blahblah', paragraphs: ["Contact us to make an appointment", "blah", "blah"]}
+      ]
+    }
+  ],
+  exceptionServices: [
+    {
+      name: 'Reconnection',
+      route: '/service',
+      title: 'Reconnection',
+      image: 'images/ew.jpg',
+      blurb: "blah",
+      contentLeft: [
+        {heading: 'Did You Know?', paragraphs: ["blah"]},
+        {heading: 'blah', paragraphs: ["blah"]},
+        {heading: 'blah', paragraphs: ["blah"]},
+        {heading: 'blah', paragraphs: ["blah"]}
+      ],
+      contentRight: [
+        {heading: 'blahblah', paragraphs: ["Contact us to make an appointment", "blah", "blah"]}
+      ]
+    },
+    {
+      name: 'New Connection',
+      route: '/service',
+      title: 'New Connection',
+      image: 'images/ew.jpg',
+      blurb: "blah",
+      contentLeft: [
+        {heading: 'Did You Know?', paragraphs: ["blah"]},
+        {heading: 'blah', paragraphs: ["blah"]},
         {heading: 'blah', paragraphs: ["blah"]},
         {heading: 'blah', paragraphs: ["blah"]}
       ],
@@ -126,6 +164,7 @@ const route = Router({ default: '/404' }, [
   ['/about', (params) => About],
   ['/contact', (params) => Contact],
   ['/service', (params) => Service],
+  ['/connections-option', (params) => ConnectionsOption],
   ['/404', (params) => The404]
 ])
 

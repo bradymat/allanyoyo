@@ -48,4 +48,7 @@ return html`
     const theHtmlWeNeed = toHtml(string)
     return html`${theHtmlWeNeed}`
   }
+  function changePageToService (service) {
+    dispatch({type: 'CHANGE_SERVICE', payload: service})
+  }
 }
