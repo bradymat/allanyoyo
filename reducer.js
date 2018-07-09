@@ -4,7 +4,6 @@ module.exports = (state, { type, payload }) => {
     case 'CHANGE_ROUTE':
       return { ...state, lastRoute: route, route: payload }
     case 'CHANGE_SERVICE':
-      console.log(payload);
       return { ...state, currentService: payload, route: payload.route }
     default:
       return { ...state }
