@@ -4,7 +4,6 @@ module.exports = ({ title, menu }, dispatch) => {
   scrollToTop()
 return html`
   <div>
-
           <header id="header">
 						<a onclick=${() => changePage('/')} class="logo"><img src="images/logo.png" alt="" /></a>
 					</header>

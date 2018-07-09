@@ -1,6 +1,6 @@
 import html from 'yo-yo'
 import header from './header'
-import back from './buttons/404back'
+import back from './buttons/back'
 
 module.exports = (state, dispatch) => {
   const { lastRoute } = state
